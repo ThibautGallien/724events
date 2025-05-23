@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Hero from "../components/Hero";
 import ProjectCard from "@/components/ProjectCard";
-import GameModal from "@/components/GameModal";
+import GameModal from "@game/GameModal";
 import { useProjects } from "@/context/ProjectsContext";
 import { useLanguage } from "@/context/LanguageContext";
 
