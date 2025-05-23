@@ -1,0 +1,271 @@
+/* Layout styles */
+
+// Container and grid system
+.container {
+  @include container;
+}
+
+.row {
+  @include flex;
+  flex-wrap: wrap;
+  margin-left: -$gutter;
+  margin-right: -$gutter;
+}
+
+.col {
+  flex: 1;
+  padding-left: $gutter;
+  padding-right: $gutter;
+}
+
+// Grid system
+.grid {
+  display: grid;
+  gap: $spacing-md;
+}
+
+.grid-2 {
+  @include grid(repeat(2, 1fr));
+
+  @include breakpoint-md {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-3 {
+  @include grid(repeat(3, 1fr));
+
+  @include breakpoint-lg {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoint-md {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-4 {
+  @include grid(repeat(4, 1fr));
+
+  @include breakpoint-lg {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoint-md {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Spacing utilities
+.mt-xs {
+  margin-top: $spacing-xs;
+}
+.mt-sm {
+  margin-top: $spacing-sm;
+}
+.mt-md {
+  margin-top: $spacing-md;
+}
+.mt-lg {
+  margin-top: $spacing-lg;
+}
+.mt-xl {
+  margin-top: $spacing-xl;
+}
+
+.mb-xs {
+  margin-bottom: $spacing-xs;
+}
+.mb-sm {
+  margin-bottom: $spacing-sm;
+}
+.mb-md {
+  margin-bottom: $spacing-md;
+}
+.mb-lg {
+  margin-bottom: $spacing-lg;
+}
+.mb-xl {
+  margin-bottom: $spacing-xl;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.py-xs {
+  padding-top: $spacing-xs;
+  padding-bottom: $spacing-xs;
+}
+.py-sm {
+  padding-top: $spacing-sm;
+  padding-bottom: $spacing-sm;
+}
+.py-md {
+  padding-top: $spacing-md;
+  padding-bottom: $spacing-md;
+}
+.py-lg {
+  padding-top: $spacing-lg;
+  padding-bottom: $spacing-lg;
+}
+.py-xl {
+  padding-top: $spacing-xl;
+  padding-bottom: $spacing-xl;
+}
+
+.px-xs {
+  padding-left: $spacing-xs;
+  padding-right: $spacing-xs;
+}
+.px-sm {
+  padding-left: $spacing-sm;
+  padding-right: $spacing-sm;
+}
+.px-md {
+  padding-left: $spacing-md;
+  padding-right: $spacing-md;
+}
+.px-lg {
+  padding-left: $spacing-lg;
+  padding-right: $spacing-lg;
+}
+.px-xl {
+  padding-left: $spacing-xl;
+  padding-right: $spacing-xl;
+}
+
+// Display utilities
+.d-none {
+  display: none;
+}
+.d-block {
+  display: block;
+}
+.d-flex {
+  display: flex;
+}
+.d-grid {
+  display: grid;
+}
+
+// Flex utilities
+.flex-center {
+  @include flex-center;
+}
+.flex-between {
+  @include flex-between;
+}
+.flex-column {
+  @include flex-column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-grow {
+  flex-grow: 1;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+.align-end {
+  align-items: flex-end;
+}
+.align-center {
+  align-items: center;
+}
+.align-stretch {
+  align-items: stretch;
+}
+
+// Position utilities
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.fixed {
+  position: fixed;
+}
+.sticky {
+  position: sticky;
+}
+
+.top-0 {
+  top: 0;
+}
+.right-0 {
+  right: 0;
+}
+.bottom-0 {
+  bottom: 0;
+}
+.left-0 {
+  left: 0;
+}
+
+.z-base {
+  z-index: $z-index-base;
+}
+.z-header {
+  z-index: $z-index-header;
+}
+.z-modal {
+  z-index: $z-index-modal;
+}
+
+// Projects grid system
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: $spacing-lg;
+  margin-top: $spacing-lg;
+  margin-bottom: $spacing-lg;
+}
+
+// Skills grid
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: $spacing-md;
+}
+
+// Interests grid
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: $spacing-md;
+  margin-top: $spacing-md;
+}
+
+// Responsive utilities
+@include breakpoint-md {
+  .hide-md {
+    display: none;
+  }
+}
+
+@include breakpoint-sm {
+  .hide-sm {
+    display: none;
+  }
+}

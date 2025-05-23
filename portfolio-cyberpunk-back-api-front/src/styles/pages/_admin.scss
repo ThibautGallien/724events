@@ -1,0 +1,67 @@
+/* Admin page styles */
+
+// Admin login page
+.admin-login {
+  padding-top: $header-height + $spacing-xl;
+  padding-bottom: $spacing-xxl;
+  min-height: calc(100vh - #{$footer-height});
+  @include flex-center;
+  
+  .login-card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+// Admin dashboard
+.admin-dashboard {
+  padding-top: $header-height + $spacing-xl;
+  padding-bottom: $spacing-xxl;
+  
+  .dashboard-header {
+    @include flex-between;
+    margin-bottom: $spacing-xl;
+    
+    .dashboard-title {
+      margin-bottom: 0;
+    }
+  }
+  
+  .dashboard-controls {
+    margin-bottom: $spacing-lg;
+  }
+  
+  .projects-table-container {
+    overflow-x: auto;
+    margin-bottom: $spacing-xl;
+  }
+  
+  .projects-table {
+    width: 100%;
+    border-collapse: collapse;
+    
+    th, td {
+      padding: $spacing-sm;
+      text-align: left;
+      border-bottom: 1px solid rgba($accent-1, 0.1);
+    }
+    
+    th {
+      font-weight: 600;
+      color: $text-primary;
+      background-color: rgba($accent-1, 0.05);
+    }
+    
+    td {
+      color: $text-secondary;
+    }
+    
+    .action-buttons {
+      @include flex;
+      
+      button {
+        margin-right: $spacing-xs;
+      }
+    }
+  }
+}

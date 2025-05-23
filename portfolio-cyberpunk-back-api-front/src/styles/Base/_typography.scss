@@ -1,0 +1,121 @@
+/* Typography styles */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-display;
+  font-weight: 700;
+  line-height: $line-height-sm;
+  margin-bottom: $spacing-md;
+  color: $text-primary;
+}
+
+h1 {
+  font-size: $font-size-xxxl;
+
+  @include breakpoint-md {
+    font-size: $font-size-xxl;
+  }
+}
+
+h2 {
+  font-size: $font-size-xxl;
+
+  @include breakpoint-md {
+    font-size: $font-size-xl;
+  }
+}
+
+h3 {
+  font-size: $font-size-xl;
+
+  @include breakpoint-md {
+    font-size: $font-size-lg;
+  }
+}
+
+h4 {
+  font-size: $font-size-lg;
+}
+
+h5 {
+  font-size: $font-size-md;
+}
+
+h6 {
+  font-size: $font-size-sm;
+}
+
+p {
+  margin-bottom: $spacing-md;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.text-accent {
+  color: $accent-1;
+}
+
+.text-muted {
+  color: $text-muted;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.mono {
+  @include mono-text;
+}
+
+// Cyberpunk specific typography
+
+.neon-text {
+  @include neon-text;
+}
+
+.terminal-text {
+  @include mono-text;
+  color: $accent-1;
+  font-size: $font-size-sm;
+  line-height: 1.4;
+}
+
+.logo-text {
+  font-family: $font-family-display;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $text-accent;
+  @include neon-text($accent-3);
+}
+
+.subtitle {
+  font-family: $font-family-mono;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $text-secondary;
+  font-size: $font-size-sm;
+}
+
+.title-glitch {
+  @include glitch-effect;
+  color: $text-accent;
+  font-family: $font-family-display;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}

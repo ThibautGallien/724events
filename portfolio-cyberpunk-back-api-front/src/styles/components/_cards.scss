@@ -1,0 +1,228 @@
+/* Card styles */
+
+// Project card
+.project-card {
+  background-color: $bg-alt;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: $gradient-neon;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-lg;
+    
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+  
+  .project-image {
+    height: 200px;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+  
+  .project-content {
+    padding: $spacing-md;
+  }
+  
+  .project-title {
+    font-size: $font-size-lg;
+    margin-bottom: $spacing-sm;
+    color: $accent-3;
+  }
+  
+  .project-description {
+    color: $text-secondary;
+    font-size: $font-size-sm;
+    margin-bottom: $spacing-md;
+    height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+  
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: $spacing-md;
+    
+    .tech-tag {
+      font-size: $font-size-xs;
+      padding: 2px 8px;
+      margin-right: 6px;
+      margin-bottom: 6px;
+      border-radius: 12px;
+      background-color: rgba($accent-1, 0.1);
+      color: $accent-1;
+      border: 1px solid rgba($accent-1, 0.3);
+    }
+  }
+  
+  .project-links {
+    @include flex;
+    
+    .project-link {
+      @include flex;
+      align-items: center;
+      color: $text-secondary;
+      font-size: $font-size-sm;
+      margin-right: $spacing-md;
+      transition: color 0.3s ease;
+      
+      svg {
+        margin-right: $spacing-xs;
+      }
+      
+      &:hover {
+        color: $accent-1;
+      }
+      
+      &.live:hover {
+        color: $accent-3;
+      }
+      
+      &.github:hover {
+        color: $purple;
+      }
+    }
+  }
+}
+
+// Skill card
+.skill-card {
+  background-color: $bg-alt;
+  padding: $spacing-md;
+  border-radius: $border-radius;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba($accent-1, 0.05),
+      transparent
+    );
+    transition: left 0.5s ease;
+  }
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: $shadow-md;
+    
+    &::before {
+      left: 100%;
+    }
+  }
+  
+  .skill-icon {
+    @include flex-center;
+    width: 50px;
+    height: 50px;
+    border-radius: 25%;
+    background-color: rgba($accent-1, 0.1);
+    color: $accent-1;
+    margin-bottom: $spacing-sm;
+  }
+  
+  .skill-name {
+    font-size: $font-size-md;
+    margin-bottom: $spacing-sm;
+    color: $text-primary;
+  }
+  
+  .skill-bar-container {
+    height: 8px;
+    width: 100%;
+    background-color: rgba($accent-1, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .skill-bar {
+    height: 100%;
+    background: linear-gradient(to right, $blue, $purple);
+    position: relative;
+    border-radius: 4px;
+    
+    .skill-level {
+      position: absolute;
+      top: -20px;
+      right: 0;
+      font-size: $font-size-xs;
+      color: $text-secondary;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+  }
+  
+  &:hover .skill-level {
+    opacity: 1;
+  }
+}
+
+// Interest card
+.interest-card {
+  @include flex-column;
+  @include flex-center;
+  padding: $spacing-md;
+  background-color: rgba($accent-1, 0.05);
+  border-radius: $border-radius;
+  transition: all 0.3s ease;
+  text-align: center;
+  
+  .interest-icon {
+    @include flex-center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba($accent-1, 0.1);
+    color: $accent-1;
+    margin-bottom: $spacing-sm;
+  }
+  
+  .interest-name {
+    font-size: $font-size-sm;
+    color: $text-primary;
+    margin: 0;
+  }
+  
+  &:hover {
+    background-color: rgba($accent-1, 0.1);
+    transform: translateY(-3px);
+  }
+}

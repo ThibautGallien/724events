@@ -1,0 +1,86 @@
+/* Contact page styles */
+
+.contact-page {
+  padding-top: $header-height + $spacing-xl;
+  padding-bottom: $spacing-xxl;
+  
+  .contact-content {
+    @include flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: $spacing-xl;
+    
+    @include breakpoint-lg {
+      flex-direction: column;
+    }
+  }
+  
+  .contact-info {
+    flex: 1;
+    padding-right: $spacing-xl;
+    
+    @include breakpoint-lg {
+      padding-right: 0;
+      margin-bottom: $spacing-xl;
+      width: 100%;
+    }
+    
+    .contact-method {
+      @include flex;
+      align-items: center;
+      margin-bottom: $spacing-lg;
+      
+      .contact-icon {
+        @include flex-center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: rgba($accent-1, 0.1);
+        color: $accent-1;
+        margin-right: $spacing-md;
+      }
+      
+      .contact-details {
+        h3 {
+          margin-bottom: $spacing-xs;
+          color: $text-primary;
+        }
+        
+        p {
+          color: $text-secondary;
+          margin-bottom: 0;
+        }
+      }
+    }
+    
+    .social-links {
+      margin-top: $spacing-xl;
+      
+      h3 {
+        margin-bottom: $spacing-md;
+      }
+      
+      .social-icons {
+        @include flex;
+        
+        a {
+          margin-right: $spacing-md;
+          color: $text-secondary;
+          transition: color 0.3s ease;
+          
+          &:hover {
+            color: $accent-1;
+          }
+        }
+      }
+    }
+  }
+  
+  .contact-form {
+    flex: 1;
+    
+    @include breakpoint-lg {
+      width: 100%;
+    }
+  }
+}

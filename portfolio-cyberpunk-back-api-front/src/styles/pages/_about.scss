@@ -1,0 +1,40 @@
+/* About page styles */
+
+.about-page {
+  padding-top: $header-height + $spacing-xl;
+  padding-bottom: $spacing-xxl;
+  
+  .about-content {
+    margin-bottom: $spacing-xxl;
+  }
+  
+  .about-text {
+    max-width: 800px;
+    margin: 0 auto $spacing-xl auto;
+    
+    p {
+      font-size: $font-size-lg;
+      line-height: $line-height-lg;
+      color: $text-secondary;
+      margin-bottom: $spacing-md;
+    }
+  }
+  
+  .about-interests {
+    max-width: 800px;
+    margin: 0 auto;
+    
+    h2 {
+      margin-bottom: $spacing-md;
+    }
+    
+    p {
+      color: $text-secondary;
+      margin-bottom: $spacing-md;
+    }
+  }
+  
+  .skills-section {
+    margin-top: $spacing-xxl;
+  }
+}

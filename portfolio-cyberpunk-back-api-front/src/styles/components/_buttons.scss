@@ -1,0 +1,300 @@
+/* Button styles */
+
+// Base button styles
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-sm $spacing-md;
+  font-family: $font-family-display;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: $border-radius;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+  svg {
+    margin-right: $spacing-xs;
+  }
+}
+
+// Neon button
+.neon-button {
+  @include neon-border($accent-1);
+  @extend .button;
+  background-color: transparent;
+  color: $accent-1;
+  position: relative;
+  overflow: hidden;
+  padding: $spacing-sm $spacing-lg;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba($accent-1, 0.2),
+      transparent
+    );
+    transition: left 0.3s ease;
+  }
+  
+  &:hover {
+    color: $white;
+    border-color: $accent-3;
+    box-shadow: 0 0 10px rgba($accent-1, 0.7),
+                0 0 20px rgba($accent-1, 0.4);
+    text-shadow: 0 0 5px rgba($accent-1, 0.8);
+    
+    &::before {
+      left: 100%;
+    }
+  }
+  
+  &.large {
+    padding: $spacing-md $spacing-xl;
+    font-size: $font-size-md;
+  }
+  
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+// Outline button
+.outline-button {
+  @extend .button;
+  background-color: transparent;
+  border: 1px solid $accent-1;
+  color: $accent-1;
+  
+  &:hover {
+    background-color: rgba($accent-1, 0.1);
+  }
+}
+
+// Solid button
+.solid-button {
+  @extend .button;
+  background-color: $accent-1;
+  color: $bg-secondary;
+  border: none;
+  
+  &:hover {
+    background-color: darken($accent-1, 10%);
+  }
+}
+
+// Danger button
+.danger-button {
+  @extend .button;
+  background-color: $error;
+  color: $white;
+  border: none;
+  
+  &:hover {
+    background-color: darken($error, 10%);
+  }
+}
+
+// Edit button
+.edit-button {
+  @extend .button;
+  padding: $spacing-xs;
+  background-color: rgba($accent-1, 0.1);
+  color: $accent-1;
+  
+  &:hover {
+    background-color: rgba($accent-1, 0.2);
+  }
+}
+
+// Delete button
+.delete-button {
+  @extend .button;
+  padding: $spacing-xs;
+  background-color: rgba($error, 0.1);
+  color: $error;
+  
+  &:hover {
+    background-color: rgba($error, 0.2);
+  }
+}
+
+// Mobile menu toggle
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: $text-primary;
+  font-size: $font-size-lg;
+  cursor: pointer;
+  
+  @include breakpoint-md {
+    display: block;
+  }
+}
+
+// Easter egg button
+.easter-egg-button {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+  
+  .glitch-element {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: $accent-2;
+    animation: glitchElement 10s infinite;
+    
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: $accent-1;
+      opacity: 0.5;
+    }
+    
+    &::before {
+      left: -3px;
+      animation: glitchElement 7s infinite 1s;
+    }
+    
+    &::after {
+      left: 3px;
+      animation: glitchElement 5s infinite 0.5s;
+    }
+  }
+  
+  &:hover {
+    opacity: 1;
+  }
+}
+
+// Filter button
+.filter-button {
+  @extend .button;
+  padding: $spacing-xs $spacing-sm;
+  background-color: transparent;
+  border: 1px solid rgba($accent-1, 0.3);
+  color: $text-secondary;
+  margin-right: $spacing-xs;
+  margin-bottom: $spacing-xs;
+  font-size: $font-size-xs;
+  
+  &.active {
+    background-color: rgba($accent-1, 0.1);
+    border-color: $accent-1;
+    color: $accent-1;
+  }
+  
+  &:hover {
+    background-color: rgba($accent-1, 0.1);
+  }
+}
+
+// Language button
+.language-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: $text-primary;
+  padding: $spacing-xs;
+  border: 1px solid rgba($accent-1, 0.3);
+  border-radius: $border-radius;
+  
+  .current-language {
+    margin-left: $spacing-xs;
+  }
+  
+  &:hover {
+    border-color: $accent-1;
+  }
+}
+
+// Save button
+.save-button {
+  @extend .neon-button;
+  background-color: rgba($success, 0.1);
+  border-color: $success;
+  color: $success;
+  
+  &:hover {
+    background-color: rgba($success, 0.2);
+    border-color: $success;
+    color: lighten($success, 10%);
+  }
+}
+
+// Cancel button
+.cancel-button {
+  @extend .button;
+  background-color: transparent;
+  color: $text-secondary;
+  
+  &:hover {
+    color: $text-primary;
+  }
+}
+
+// Logout button
+.logout-button {
+  @extend .button;
+  color: $error;
+  background-color: transparent;
+  border: 1px solid rgba($error, 0.3);
+  
+  &:hover {
+    background-color: rgba($error, 0.1);
+    border-color: $error;
+  }
+}
+
+// Close button
+.close-button {
+  background: none;
+  border: none;
+  color: $text-primary;
+  font-size: $font-size-lg;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: $accent-2;
+  }
+}
+
+// Add project button
+.add-project-button {
+  @extend .neon-button;
+  margin-bottom: $spacing-lg;
+}
+
+// Confirm delete button
+.confirm-button {
+  @extend .button;
+  background-color: $error;
+  color: $white;
+  
+  &:hover {
+    background-color: darken($error, 10%);
+  }
+}

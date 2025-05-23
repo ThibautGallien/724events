@@ -1,0 +1,131 @@
+/* Navigation styles */
+
+.navigation {
+  @include flex;
+  align-items: center;
+  
+  @include breakpoint-md {
+    position: fixed;
+    top: $header-height;
+    right: -100%;
+    width: 70%;
+    height: calc(100vh - #{$header-height});
+    flex-direction: column;
+    background-color: $bg-alt;
+    box-shadow: $shadow-lg;
+    z-index: $z-index-header - 1;
+    transition: right 0.3s ease-in-out;
+    padding: $spacing-lg;
+    justify-content: flex-start;
+    
+    &.open {
+      right: 0;
+    }
+  }
+}
+
+.nav-links {
+  @include flex;
+  align-items: center;
+  margin-right: $spacing-lg;
+  
+  @include breakpoint-md {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: $spacing-lg;
+  }
+  
+  a {
+    font-family: $font-family-display;
+    color: $text-primary;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: $spacing-sm $spacing-md;
+    letter-spacing: 0.05em;
+    position: relative;
+    transition: color 0.3s ease;
+    
+    @include breakpoint-md {
+      width: 100%;
+      padding: $spacing-md 0;
+      border-bottom: 1px solid rgba($accent-1, 0.1);
+    }
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: $accent-1;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+      
+      @include breakpoint-md {
+        display: none;
+      }
+    }
+    
+    &:hover, &.active {
+      color: $accent-1;
+      
+      &::after {
+        width: 70%;
+      }
+    }
+  }
+}
+
+// Language switcher
+.language-switcher {
+  position: relative;
+  
+  @include breakpoint-md {
+    width: 100%;
+    margin-top: $spacing-md;
+  }
+  
+  .language-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 120px;
+    background-color: $bg-alt;
+    border: 1px solid rgba($accent-1, 0.3);
+    border-radius: $border-radius;
+    box-shadow: $shadow-md;
+    z-index: $z-index-header;
+    padding: $spacing-xs 0;
+    
+    @include breakpoint-md {
+      width: 100%;
+      position: relative;
+      margin-top: $spacing-xs;
+    }
+    
+    .language-option {
+      display: block;
+      width: 100%;
+      padding: $spacing-xs $spacing-sm;
+      text-align: left;
+      color: $text-secondary;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background-color: rgba($accent-1, 0.1);
+        color: $text-primary;
+      }
+      
+      &.active {
+        color: $accent-1;
+        background-color: rgba($accent-1, 0.05);
+      }
+    }
+  }
+}

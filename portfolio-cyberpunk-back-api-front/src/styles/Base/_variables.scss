@@ -1,0 +1,102 @@
+/* Cyberpunk 2077 inspired color variables */
+
+// Base colors
+$black: #080808;
+$dark-gray: #121212;
+$gray: #333333;
+$light-gray: #666666;
+$white: #f0f0f0;
+
+// Neon colors
+$yellow: #fcee0c;
+$blue: #00f0ff;
+$pink: #ff00ff;
+$orange: #ff5500;
+$green: #00ff66;
+$purple: #bc13fe;
+
+// Accent colors
+$accent-1: $blue;
+$accent-2: $pink;
+$accent-3: $yellow;
+
+// Background colors
+$bg-primary: $dark-gray;
+$bg-secondary: $black;
+$bg-alt: #1a1a1a;
+
+// Text colors
+$text-primary: $white;
+$text-secondary: #cccccc;
+$text-muted: #999999;
+$text-accent: $yellow;
+
+// Other colors
+$error: #ff3333;
+$success: $green;
+$warning: $orange;
+
+// Gradients
+$gradient-neon: linear-gradient(90deg, $blue, $pink, $blue);
+$gradient-cyberpunk: linear-gradient(45deg, $blue, $purple, $pink);
+$gradient-terminal: linear-gradient(
+  180deg,
+  rgba($blue, 0.2),
+  rgba($blue, 0.05)
+);
+
+// Shadows
+$shadow-sm: 0 0 5px rgba($blue, 0.3);
+$shadow-md: 0 0 15px rgba($blue, 0.4);
+$shadow-lg: 0 0 25px rgba($pink, 0.5);
+$shadow-text: 0 0 10px rgba($blue, 0.8);
+$shadow-neon: 0 0 15px rgba($pink, 0.7), 0 0 30px rgba($pink, 0.4);
+
+// Borders
+$border-width: 1px;
+$border-radius: 4px;
+$border-radius-lg: 8px;
+$border-color: rgba($blue, 0.3);
+
+// Spacing
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+$spacing-xxl: 5rem;
+
+// Typography
+$font-family-base: "Rajdhani", "Orbitron", sans-serif;
+$font-family-mono: "Share Tech Mono", monospace;
+$font-family-display: "Orbitron", sans-serif;
+
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-md: 1rem;
+$font-size-lg: 1.25rem;
+$font-size-xl: 1.5rem;
+$font-size-xxl: 2rem;
+$font-size-xxxl: 3rem;
+
+$line-height-base: 1.5;
+$line-height-sm: 1.25;
+$line-height-lg: 1.8;
+
+// Layout
+$header-height: 4.375rem; // Changed from 70px to 4.375rem (70/16)
+$footer-height: 200px;
+$container-width: 1200px;
+$gutter: $spacing-md;
+
+// Breakpoints
+$breakpoint-xs: 480px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Z-index levels
+$z-index-base: 1;
+$z-index-header: 100;
+$z-index-modal: 1000;

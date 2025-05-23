@@ -1,0 +1,86 @@
+/* Terminal styles */
+
+.hero-terminal {
+  width: 100%;
+  max-width: 500px;
+  background-color: rgba($bg-secondary, 0.8);
+  border-radius: $border-radius;
+  overflow: hidden;
+  box-shadow: $shadow-lg;
+  margin-top: $spacing-lg;
+  
+  @include breakpoint-md {
+    margin-top: $spacing-xl;
+  }
+  
+  .terminal-header {
+    @include flex-between;
+    padding: $spacing-xs $spacing-sm;
+    background-color: rgba($accent-1, 0.1);
+    
+    .terminal-buttons {
+      @include flex;
+      
+      .terminal-button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin-right: 6px;
+        
+        &:nth-child(1) {
+          background-color: rgba($error, 0.8);
+        }
+        
+        &:nth-child(2) {
+          background-color: rgba($warning, 0.8);
+        }
+        
+        &:nth-child(3) {
+          background-color: rgba($success, 0.8);
+        }
+      }
+    }
+    
+    .terminal-title {
+      @include mono-text;
+      font-size: $font-size-xs;
+      color: $text-secondary;
+    }
+  }
+  
+  .terminal-body {
+    padding: $spacing-md;
+    height: 300px;
+    overflow-y: auto;
+    @include mono-text;
+    color: $text-secondary;
+    font-size: $font-size-sm;
+    
+    .terminal-output {
+      margin-bottom: $spacing-sm;
+      color: $accent-1;
+    }
+    
+    .terminal-prompt {
+      @include flex;
+      
+      .terminal-user {
+        color: $accent-3;
+        margin-right: $spacing-xs;
+      }
+      
+      .terminal-cmd {
+        color: $text-primary;
+      }
+      
+      .terminal-cursor {
+        color: $accent-1;
+        margin-left: 2px;
+        
+        &.terminal-cursor-blink {
+          animation: cursorBlink 1s step-end infinite;
+        }
+      }
+    }
+  }
+}

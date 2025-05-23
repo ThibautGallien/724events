@@ -1,0 +1,26 @@
+/* Projects page styles */
+
+.projects-page {
+  padding-top: $header-height + $spacing-xl;
+  padding-bottom: $spacing-xxl;
+  
+  .filter-controls {
+    @include flex;
+    flex-wrap: wrap;
+    margin-bottom: $spacing-lg;
+    padding: $spacing-md;
+    background-color: $bg-alt;
+    border-radius: $border-radius;
+  }
+  
+  .projects-grid {
+    margin-top: $spacing-xl;
+  }
+  
+  .no-projects {
+    text-align: center;
+    padding: $spacing-xl;
+    color: $text-secondary;
+    font-style: italic;
+  }
+}

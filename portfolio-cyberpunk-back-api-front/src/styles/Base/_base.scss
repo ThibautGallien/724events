@@ -1,0 +1,197 @@
+/* Base styles */
+
+// Import fonts
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-md;
+  line-height: $line-height-base;
+  color: $text-primary;
+  background-color: $bg-primary;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: $accent-1;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+
+  &:hover {
+    color: $accent-3;
+    text-shadow: 0 0 5px rgba($accent-1, 0.5);
+  }
+}
+
+button {
+  cursor: pointer;
+  font-family: $font-family-base;
+  background: none;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+textarea,
+select {
+  font-family: $font-family-base;
+  font-size: $font-size-md;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  @include container;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+// Cyberpunk background element
+.cyberpunk-background {
+  @include cyberpunk-grid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background-color: $bg-secondary;
+}
+
+// Loading Screen
+.loading-screen {
+  @include flex-column;
+  @include flex-center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $bg-secondary;
+  z-index: $z-index-modal;
+
+  .loading-bar {
+    width: 300px;
+    height: 8px;
+    background-color: rgba($blue, 0.2);
+    margin: $spacing-lg 0;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(90deg, $blue, $pink);
+      animation: loadingBar 2s ease-in-out infinite;
+    }
+  }
+
+  .loading-progress {
+    height: 100%;
+    width: 0;
+    background-color: $blue;
+  }
+
+  .loading-info {
+    @include mono-text;
+    font-size: $font-size-md;
+    color: $accent-1;
+    margin-top: $spacing-md;
+  }
+}
+
+// Generic section styling
+section {
+  padding: $spacing-xl 0;
+  position: relative;
+}
+
+.section-title {
+  @include title-text;
+  color: $text-primary;
+  margin-bottom: $spacing-lg;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background: $gradient-neon;
+  }
+}
+
+.section-subtitle {
+  color: $text-secondary;
+  margin-bottom: $spacing-xl;
+  font-size: $font-size-lg;
+}
+
+// Page titles
+.page-header {
+  margin-bottom: $spacing-xl;
+  text-align: center;
+}
+
+.page-title {
+  @include title-text($font-size-xxxl);
+  margin-bottom: $spacing-md;
+  color: $text-accent;
+}
+
+.page-subtitle {
+  font-size: $font-size-lg;
+  color: $text-secondary;
+  max-width: 600px;
+  margin: 0 auto $spacing-lg auto;
+}
