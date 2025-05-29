@@ -9,7 +9,7 @@
   background-color: transparent;
   z-index: $z-index-header;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  
+
   &.scrolled {
     background-color: rgba($bg-secondary, 0.9);
     backdrop-filter: blur(10px);
@@ -26,7 +26,7 @@
   @include flex;
   align-items: center;
   text-decoration: none;
-  
+
   .logo-glitch {
     @include glitch-effect;
     font-family: $font-family-display;
@@ -36,11 +36,112 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
   }
-  
+
   .logo-subtitle {
     font-family: $font-family-mono;
     font-size: $font-size-sm;
     color: $accent-1;
     margin-left: $spacing-xs;
   }
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: $accent-1;
+  font-size: $font-size-xl;
+  cursor: pointer;
+  z-index: 1001;
+
+  @include breakpoint-md {
+    display: block;
+  }
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $spacing-lg;
+
+  @include breakpoint-md {
+    position: fixed;
+    top: $header-height;
+    right: 0;
+    width: 300px;
+    max-height: calc(100vh - $header-height);
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: $bg-alt;
+    border-left: 2px solid $accent-1;
+    box-shadow: 0 0 20px rgba($accent-1, 0.3);
+    border-radius: 0 0 0 $border-radius-lg;
+    z-index: 999;
+    padding: $spacing-lg;
+
+    display: none;
+
+    &.open {
+      display: flex;
+    }
+
+    &.highlighted {
+      background-color: lighten($bg-alt, 5%);
+      box-shadow: 0 0 12px rgba($accent-1, 0.4);
+      border-left: 2px solid $accent-2;
+    }
+  }
+}
+
+.close-menu-button {
+  display: none;
+  background: none;
+  border: none;
+  color: $accent-1;
+  font-size: $font-size-xl;
+  align-self: flex-end;
+  margin-bottom: $spacing-md;
+  cursor: pointer;
+  z-index: 1001;
+
+  @include breakpoint-md {
+    display: block;
+  }
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-md;
+
+  @include breakpoint-md {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  a {
+    font-size: $font-size-lg;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $text-primary;
+    padding: $spacing-sm 0;
+    border-bottom: 1px solid rgba($accent-1, 0.2);
+
+    &.active {
+      color: $accent-1;
+      text-shadow: 0 0 8px $accent-1;
+    }
+
+    &:hover {
+      color: $accent-3;
+      text-shadow: 0 0 8px $accent-3;
+    }
+  }
+}
+
+.language-switcher-wrapper {
+  margin-top: $spacing-xl;
+  position: relative;
+  z-index: 1000;
 }

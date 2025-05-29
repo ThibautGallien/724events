@@ -1,26 +1,5 @@
 [
   {
-    "id": "1",
-    "title": {
-      "en": "Cyberpunk Portfolio",
-      "fr": "Portfolio Cyberpunk",
-      "jp": "サイバーパンク・ポートフォリオ"
-    },
-    "description": {
-      "en": "A futuristic and animated developer portfolio.",
-      "fr": "Un portfolio développeur futuriste et animé.",
-      "jp": "未来的でアニメーションされた開発者ポートフォリオ。"
-    },
-    "details": {
-      "en": "Built using Next.js, Tailwind CSS and custom animations.",
-      "fr": "Construit avec Next.js, Tailwind CSS et des animations sur mesure.",
-      "jp": "Next.js、Tailwind CSS、カスタムアニメーションを使用して構築。"
-    },
-    "image": "images/cyberpunk.webp",
-    "siteLink": "https://yourprojectsite.com",
-    "githubLink": "https://github.com/yourusername/yourproject"
-  },
-  {
     "id": "1748029983545",
     "title": {
       "en": "Kasa",
@@ -37,11 +16,7 @@
       "fr": "",
       "jp": ""
     },
-    "technologies": [
-      "Git",
-      "Node",
-      "React"
-    ],
+    "technologies": ["Git", "Node", "React"],
     "link": "https://kasa.com",
     "github": "https://github.com",
     "featured": true,

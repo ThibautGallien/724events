@@ -6,6 +6,7 @@ import { LanguageProvider } from "@/context/LanguageContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useState, useEffect } from "react";
+import Head from "next/head";
 
 export default function RootLayout({ children }) {
   const [loading, setLoading] = useState(true);
@@ -17,6 +18,14 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <Head>
+        <title>Thibaut.dev | Portfolio Cyberpunk</title>
+        <meta
+          name="description"
+          content="Portfolio de Thibaut Gallien, développeur front-end."
+        />
+        <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
+      </Head>
       <body>
         <LanguageProvider>
           <ProjectsProvider>

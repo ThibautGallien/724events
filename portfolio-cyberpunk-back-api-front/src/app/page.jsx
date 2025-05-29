@@ -1,17 +1,14 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import Hero from "../components/Hero";
 import ProjectCard from "@/components/ProjectCard";
-import GameModal from "@/components/GameModal";
 import { useProjects } from "@/context/ProjectsContext";
 import { useLanguage } from "@/context/LanguageContext";
 
 const Home = () => {
   const { projects } = useProjects();
   const { t } = useLanguage();
-  const [isGameOpen, setIsGameOpen] = useState(false);
 
   const featuredProjects = projects
     .filter((project) => project.featured)
@@ -49,19 +46,9 @@ const Home = () => {
             <Link href="/contact" className="neon-button large">
               {t("contact.title")}
             </Link>
-
-            <button
-              className="easter-egg-button"
-              onClick={() => setIsGameOpen(true)}
-              aria-label="Easter egg"
-            >
-              <div className="glitch-element"></div>
-            </button>
           </div>
         </div>
       </section>
-
-      <GameModal isOpen={isGameOpen} onClose={() => setIsGameOpen(false)} />
     </>
   );
 };

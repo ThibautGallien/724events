@@ -21,26 +21,26 @@
   border-radius: $border-radius-lg;
   box-shadow: $shadow-lg;
   overflow-y: auto;
-  
+
   .modal-header {
     @include flex-between;
     padding: $spacing-md;
     border-bottom: 1px solid rgba($accent-1, 0.2);
-    
+
     h2 {
       margin-bottom: 0;
     }
   }
-  
+
   form {
     padding: $spacing-md;
   }
-  
+
   .modal-actions {
     @include flex;
     justify-content: flex-end;
     margin-top: $spacing-lg;
-    
+
     button {
       margin-left: $spacing-sm;
     }
@@ -48,48 +48,85 @@
 }
 
 .game-modal {
-  width: 100%;
+  width: 90vw;
   max-width: 500px;
+  max-height: 95vh;
   background-color: $bg-alt;
   border-radius: $border-radius-lg;
   box-shadow: $shadow-lg;
   overflow: hidden;
-  
+
+  @include breakpoint-sm {
+    width: 95vw;
+    max-height: 95vh;
+  }
+
   .modal-header {
     @include flex-between;
     padding: $spacing-md;
     border-bottom: 1px solid rgba($accent-1, 0.2);
-    
+
     h2 {
       margin-bottom: 0;
     }
   }
-  
+
   .game-container {
     padding: $spacing-md;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  
+
   .game-score {
     font-family: $font-family-mono;
     font-size: $font-size-lg;
     color: $accent-3;
     margin-bottom: $spacing-sm;
   }
-  
+
   .game-canvas {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 1 / 1;
     border: 1px solid $accent-1;
     box-shadow: 0 0 10px rgba($accent-1, 0.3);
     margin-bottom: $spacing-md;
   }
-  
+
+  .game-controls {
+    @include flex-column;
+    align-items: center;
+    margin-bottom: $spacing-md;
+
+    button {
+      background-color: $accent-1;
+      color: $black;
+      font-size: $font-size-xl;
+      margin: $spacing-xs;
+      padding: $spacing-sm $spacing-md;
+      border: none;
+      border-radius: $border-radius;
+      box-shadow: $shadow-neon;
+      cursor: pointer;
+
+      &:hover {
+        background-color: lighten($accent-1, 10%);
+      }
+    }
+
+    > div {
+      @include flex;
+      justify-content: center;
+    }
+  }
+
   .game-instructions {
     text-align: center;
     color: $text-secondary;
     font-size: $font-size-sm;
-    
+
     p {
       margin-bottom: $spacing-xs;
     }
@@ -106,7 +143,7 @@
   backdrop-filter: blur(5px);
   z-index: $z-index-modal + 1;
   @include flex-center;
-  
+
   .confirm-delete-content {
     width: 100%;
     max-width: 400px;
@@ -115,16 +152,16 @@
     box-shadow: $shadow-lg;
     padding: $spacing-lg;
     text-align: center;
-    
+
     p {
       margin-bottom: $spacing-lg;
       color: $text-primary;
     }
-    
+
     .confirm-actions {
       @include flex;
       justify-content: center;
-      
+
       button {
         margin: 0 $spacing-xs;
       }

@@ -147,6 +147,7 @@
     rgba($accent-1, 0.05),
     rgba($accent-2, 0.05)
   );
+  overflow: hidden;
 
   &::before {
     content: "";
@@ -163,37 +164,38 @@
         0 0 / 50px 100%,
       linear-gradient(to bottom, rgba($accent-1, 0.05) 1px, transparent 1px) 0 0 /
         100% 50px;
+    z-index: 0;
   }
 
   .cta-content {
-    text-align: center;
     position: relative;
     z-index: 1;
-  }
+    @include flex-column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 
-  .cta-title {
-    @include glitch-effect;
-    font-family: $font-family-display;
-    font-size: $font-size-xxl;
-    font-weight: 900;
-    text-transform: uppercase;
-    color: $text-primary;
-    margin-bottom: $spacing-lg;
-    padding-right: 50px;
-
-    @include breakpoint-md {
-      font-size: $font-size-xl;
+    .cta-title {
+      font-size: $font-size-xxl;
+      color: $accent-3;
+      @include neon-text($accent-3);
+      margin-bottom: $spacing-md;
+      padding-left: 40px;
     }
   }
+}
 
-  .easter-egg-button {
-    position: absolute;
-    bottom: $spacing-md;
-    right: $spacing-md;
-    opacity: 0.1;
+.cta-title {
+  @include glitch-effect;
+  font-family: $font-family-display;
+  font-size: $font-size-xxl;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: $text-primary;
+  margin-bottom: $spacing-lg;
+  padding-right: 50px;
 
-    &:hover {
-      opacity: 0.5;
-    }
+  @include breakpoint-md {
+    font-size: $font-size-xl;
   }
 }

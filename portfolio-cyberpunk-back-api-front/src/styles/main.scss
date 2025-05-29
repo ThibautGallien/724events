@@ -1,13 +1,13 @@
 /* Main SASS file for Cyberpunk Portfolio */
 
 /* Variables and Mixins */
-@import "./base/variables";
-@import "./base/mixins";
+@import "./Base/variables";
+@import "./Base/mixins";
 
 /* Base Styles */
-@import "./base/base";
-@import "./base/typography";
-@import "./base/layout";
+@import "./Base/base";
+@import "./Base/typography";
+@import "./Base/layout";
 
 /* Components */
 @import "./components/buttons";
@@ -29,7 +29,7 @@
 @import "./pages/admin";
 
 /* Utilities */
-@import "./base/utilities";
+@import "./Base/utilities";
 
 /* Animations */
-@import "./base/animations";
+@import "./Base/animations";
